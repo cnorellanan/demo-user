@@ -1,6 +1,3 @@
-# User API
-you can try it *[here](http://52.54.71.10:8080/swagger-ui.html)*
-
 ## Installation Guide
 
 ### Prerequisites
