@@ -7,7 +7,7 @@ import java.time.LocalDateTime;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
-public class UserResponseDTO extends UserDTO{
+public class UserResponseDTO extends UserDTO {
 
     private String id;
 

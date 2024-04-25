@@ -14,7 +14,7 @@ import java.util.Objects;
 public class ExceptionHandlerAdvice {
 
     @ExceptionHandler(BusinessException.class)
-    public ResponseEntity<ErrorDTO> customHandleException(BusinessException e){
+    public ResponseEntity<ErrorDTO> customHandleException(BusinessException e) {
         return ResponseEntity
                 .status(e.getCode())
                 .body(ErrorDTO.builder()
@@ -25,7 +25,7 @@ public class ExceptionHandlerAdvice {
     }
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
-    public ResponseEntity<ErrorDTO> handleException(MethodArgumentNotValidException e){
+    public ResponseEntity<ErrorDTO> handleException(MethodArgumentNotValidException e) {
         return ResponseEntity
                 .status(400)
                 .body(ErrorDTO.builder()

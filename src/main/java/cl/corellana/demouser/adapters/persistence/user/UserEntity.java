@@ -1,6 +1,5 @@
 package cl.corellana.demouser.adapters.persistence.user;
 
-import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;

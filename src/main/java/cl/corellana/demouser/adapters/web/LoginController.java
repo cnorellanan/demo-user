@@ -24,14 +24,14 @@ public class LoginController {
 
     @ApiOperation(value = "Authenticate a user", nickname = "loginPost", notes = "", response = UserResponseDTO.class, authorizations = {
             @Authorization(value = "BearerAuth")
-    }, tags={  })
+    }, tags = {})
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "User authenticated successfully", response = UserResponseDTO.class),
             @ApiResponse(code = 400, message = "Bad request"),
             @ApiResponse(code = 401, message = "Unauthorized"),
-            @ApiResponse(code = 500, message = "Internal Server Error") })
+            @ApiResponse(code = 500, message = "Internal Server Error")})
     @RequestMapping(value = "",
-            produces = { "application/json" },
+            produces = {"application/json"},
             method = RequestMethod.POST)
     ResponseEntity<UserResponseDTO> loginPost(@ApiParam(value = "accessToken") @RequestHeader("Authorization") @Valid String accessToken) throws BusinessException {
         return ResponseEntity.ok(loginPortIn.execute(accessToken));

@@ -92,7 +92,7 @@ public class JWTUtilsTest {
         assertTrue(valid);
     }
 
-    private String validToken(){
+    private String validToken() {
         return jwtUtils.generateToken("test@example.com");
     }
 

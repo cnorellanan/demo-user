@@ -11,19 +11,19 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 @SpringBootApplication
 public class DemoUserApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(DemoUserApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(DemoUserApplication.class, args);
+    }
 
-	@Bean
-	public PasswordEncoder encoder() {
-		return new BCryptPasswordEncoder();
-	}
+    @Bean
+    public PasswordEncoder encoder() {
+        return new BCryptPasswordEncoder();
+    }
 
-	@Bean
-	public WebSecurityCustomizer webSecurityCustomizer() {
-		return (web) -> web.ignoring()
-				.requestMatchers(new AntPathRequestMatcher("/**"));
-	}
+    @Bean
+    public WebSecurityCustomizer webSecurityCustomizer() {
+        return (web) -> web.ignoring()
+                .requestMatchers(new AntPathRequestMatcher("/**"));
+    }
 
 }

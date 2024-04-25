@@ -1,7 +1,7 @@
 package cl.corellana.demouser.adapters.persistence.user;
 
-import cl.corellana.demouser.application.port.out.SaveUserPortOut;
 import cl.corellana.demouser.application.port.out.GetUserPortOut;
+import cl.corellana.demouser.application.port.out.SaveUserPortOut;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 

@@ -23,7 +23,7 @@ public class LoginService implements LoginPortIn {
 
     @Override
     public UserResponseDTO execute(String token) throws BusinessException {
-        if(!jwtUtils.validateToken(token)){
+        if (!jwtUtils.validateToken(token)) {
             throw new BusinessException(401, "Invalid token");
         }
 
