@@ -1,0 +1,26 @@
+@startuml
+actor User
+participant "LoginController" as Controller
+participant "LoginService" as Service
+participant "UserRepository" as Repository
+database Database
+
+User -> Controller: Send POST request to /login
+Controller -> Service: Execute business logic
+Service -> Repository: Validate user exist
+Repository -> Database: Get user
+Database --> Repository: Return user if exist
+Repository --> Service: Validate response
+alt User not exist
+Service --> Controller: Response error
+Controller --> User: Response error
+end
+Service -> Repository: Update last login
+Repository -> Database: Update user
+Repository --> Service: Create response
+note right
+    re-generate token
+end note
+Service --> Controller: Response success
+Controller --> User: Response user data
+@enduml

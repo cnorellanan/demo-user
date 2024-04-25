@@ -1,0 +1,23 @@
+@startuml
+skinparam componentStyle rectangle
+component "Hexagonal Architecture"{
+package "adapters" {
+    [web]
+    [persistence]
+}
+
+package "application" {
+    [port.in]->[service]
+    [service]->[port.out]
+}
+
+database "h2"{
+     [user]
+}
+
+HTTP --> web
+web --> port.in
+port.out --> persistence
+persistence --> user
+}
+@enduml
